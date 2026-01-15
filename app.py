@@ -650,7 +650,7 @@ if df is not None:
         st.markdown("### 📊 Eficiencia por Jugador y Concepto")
         
         # Selector de jugador
-        players_list = df['FINALIZADOR'].unique().tolist()
+        players_list = df['FINALIZADOR'].dropna().unique().tolist()
         selected_player = st.selectbox("Selecciona jugador:", sorted(players_list))
         
         player_concept_df = analyze_player_by_concept(df, min_n)
